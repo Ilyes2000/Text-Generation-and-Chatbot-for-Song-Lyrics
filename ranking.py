@@ -77,7 +77,7 @@ def create_comparison_app(file_paths):
                 else:
                     # All files finished, prepare zip archive for download
                     zip_filepath = create_zip_archive(results_data)
-                    return "Comparison finished for all files! Please download the results ('Download results' button).", "", "", "Comparison finished for all files!", gr.update(visible=True, value=zip_filepath, label="Download All Results") # Final completion, with file download
+                    return "Comparison finished for all files! Please download the results ('Download results' button).", "", "", "Comparison finished for all files!", gr.update(visible=True, value=zip_filepath, label="Download results") # Final completion, with file download
         else:
             # Should not reach here normally, but handle for robustness - in case record_choice is called after file is finished
             if current_file_index < len(file_paths) - 1:
@@ -88,7 +88,7 @@ def create_comparison_app(file_paths):
             else:
                 # All files finished, prepare zip archive for download
                 zip_filepath = create_zip_archive(results_data)
-                return "Comparison finished for all files! Please download the results ('Download results' button).", "", "", "Comparison finished for all files!", gr.update(visible=True, value=zip_filepath, label="Download All Results")
+                return "Comparison finished for all files! Please download the results ('Download results' button).", "", "", "Comparison finished for all files!", gr.update(visible=True, value=zip_filepath, label="Download results")
 
     def create_zip_archive(results_data):
         """Creates a zip archive of all result files."""
@@ -103,6 +103,7 @@ def create_comparison_app(file_paths):
     with gr.Blocks() as iface:
         progress_markdown = gr.Markdown(get_progress_text()) # Progress indication at the top
         gr.Markdown("# LLM song lyrics generation ranking")
+        gr.Markdown("There are 5 files (each with 50 prompts) to compare. For each prompt, choose the better lyrics between Model A and Model B. After you complete all files and prompts, you can download the results.")
         prompt_output = gr.Textbox(label="Lyrics description", lines=3, interactive=False, max_lines=3) # Fixed lines for prompt
 
         with gr.Row(): # Row for side-by-side outputs
