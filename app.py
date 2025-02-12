@@ -92,7 +92,7 @@ def create_comparison_app(file_paths):
 
     def create_zip_archive(results_data):
         """Creates a zip archive of all result files."""
-        zip_filepath = "/tmp/results.zip"
+        zip_filepath = "./results.zip"
         with zipfile.ZipFile(zip_filepath, 'w') as zipf:
             for filepath, data in results_data.items():
                 results_filename = os.path.basename(filepath).replace(".json", "_results.json")
