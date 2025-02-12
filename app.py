@@ -149,6 +149,6 @@ def create_comparison_app(file_paths):
     return iface
 
 if __name__ == '__main__':
-    json_files = ["./Qwen2.5-0.5B-song-lyrics-generation.json", "./SmolL2-135M-song-lyrics-generation.json", "./SmolLM2-135M-Instruct-song-lyrics-generation.json", "./SmolLM2-360M-song-lyrics-generation.json", "./SmolLM2-360M-Instruct-song-lyrics-generation.json"]
+    json_files = ["./Qwen2.5-0.5B-song-lyrics-generation.json", "./SmolLM2-135M-song-lyrics-generation.json", "./SmolLM2-135M-Instruct-song-lyrics-generation.json", "./SmolLM2-360M-song-lyrics-generation.json", "./SmolLM2-360M-Instruct-song-lyrics-generation.json"]
     app = create_comparison_app(json_files)
     app.launch()
