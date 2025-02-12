@@ -90,7 +90,7 @@ for models_pair in models:
         base_resp = base_pipe(p, max_new_tokens=256, do_sample=True, truncation=True, batch_size=8)[0]["generated_text"]
 
         results.append({
-            "prompt": p,
+            "prompt": "Generate song lyrics based on the description: " + p + "\nSong lyrics:",
             "finetuned_output": finetuned_resp,
             "base_output": base_resp
         })
