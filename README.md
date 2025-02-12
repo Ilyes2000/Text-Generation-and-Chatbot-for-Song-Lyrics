@@ -10,7 +10,7 @@ https://huggingface.co/spaces/petkopetkov/LLM-song-lyrics-generation-ranking
 Install requirements:
 
 ```
-!pip install torch datasets pandas tqdm transformers trl matplotlib seaborn ipykernel
+pip install torch datasets pandas tqdm transformers trl matplotlib seaborn ipykernel
 ```
 
 Run Gradio app:
